@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:material_design_widgets/bottom_navigation_bar.dart';
 import 'package:material_design_widgets/stepper.dart';
 
 void main(List<String> args) {
@@ -31,7 +32,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text("Widgets"),
       ),
-      body: MyStepper(),
+      body: MyBottomNavigationBar(),
     );
   }
 }
