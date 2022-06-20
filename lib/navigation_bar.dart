@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
-class MyBottomNavigationBar extends StatefulWidget {
+class MyNavigationBar extends StatefulWidget {
+  MyNavigationBar({Key? key}) : super(key: key);
+
   @override
-  State<MyBottomNavigationBar> createState() => _MyBottomNavigationBarState();
+  State<MyNavigationBar> createState() => _MyNavigationBarState();
 }
 
-class _MyBottomNavigationBarState extends State<MyBottomNavigationBar>
+class _MyNavigationBarState extends State<MyNavigationBar>
     with SingleTickerProviderStateMixin {
   TabController? tabController;
 
@@ -24,6 +26,19 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        bottom: TabBar(
+          controller: tabController,
+          tabs: [
+            Tab(
+              icon: Icon(Icons.directions_bike_sharp),
+            ),
+            Tab(
+              icon: Icon(Icons.directions_car_sharp),
+            ),
+          ],
+        ),
+      ),
       body: TabBarView(
         children: [
           Center(
@@ -35,19 +50,6 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar>
         ],
         controller: tabController,
       ),
-      bottomNavigationBar: Material(
-          color: Colors.green,
-          child: TabBar(
-            controller: tabController,
-            tabs: [
-              Tab(
-                icon: Icon(Icons.directions_bike_sharp),
-              ),
-              Tab(
-                icon: Icon(Icons.directions_car_sharp),
-              ),
-            ],
-          )),
     );
   }
 }

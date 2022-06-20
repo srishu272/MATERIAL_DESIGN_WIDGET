@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:material_design_widgets/bottom_navigation_bar.dart';
 import 'package:material_design_widgets/stepper.dart';
 
+import 'navigation_bar.dart';
+
 void main(List<String> args) {
   runApp(MyApp());
 }
@@ -33,6 +35,13 @@ class _HomePageState extends State<HomePage> {
         title: Text("Widgets"),
       ),
       body: MyBottomNavigationBar(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
+      floatingActionButton: FloatingActionButton(
+        onPressed: (() => print("Button pressed")),
+        child: Icon(Icons.add_alert_rounded),
+        backgroundColor: Colors.pink,
+      ),
     );
   }
 }
